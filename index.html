@@ -17,27 +17,22 @@
 
             function initialize() {
                 var options = {
-                    zoom: 15,
-                    center: new google.maps.LatLng(41.6549, 41.684),
+                    zoom: 20,
+                    center: new google.maps.LatLng(41.6539, 41.6842),
                     mapTypeId: google.maps.MapTypeId.SATELLITE
                 };
 
                 map = new google.maps.Map(document.getElementById("map"), options);
 
                 var bounds = {
-                    15: [[20177, 20178], [12205, 12206]],
-                    16: [[40355, 40356], [24411, 24412]],
-                    17: [[80711, 80713], [48823, 48825]],
-                    18: [[161423, 161427], [97647, 97651]],
-                    19: [[322847, 322854], [195294, 195303]],
-                    20: [[645694, 645708], [390589, 390606]],
-                    21: [[1291389, 1291416], [781179, 781213]],
-                    22: [[2582779, 2582832], [1562358, 1562427]]
+                    20: [[645692, 645711], [390588, 390615]],
+                    21: [[1291385, 1291423], [781176, 781231]],
+                    22: [[2582770, 2582847], [1562352, 1562463]]
                 };
 
                 var imageMapType = new google.maps.ImageMapType({
                     getTileUrl: function(coord, zoom) {
-                        if (zoom < 15 || zoom > 22 ||
+                        if (zoom < 20 || zoom > 22 ||
                             bounds[zoom][0][0] > coord.x || coord.x > bounds[zoom][0][1] ||
                             bounds[zoom][1][0] > coord.y || coord.y > bounds[zoom][1][1]) {
                             return null;
